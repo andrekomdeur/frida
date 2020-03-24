@@ -1,23 +1,28 @@
 package be.vdab.frida.controllers;
 
+import be.vdab.frida.domain.Adres;
+import be.vdab.frida.domain.Gemeente;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 // enkele imports
-@RestController
+@Controller
 @RequestMapping("/")
 class IndexController {
     @GetMapping
-    public String index() {
+    public ModelAndView index() {
         DayOfWeek weekdag = LocalDate.now().getDayOfWeek();
-        return new StringBuffer("<!doctype html><html><title>Hallo</title><body>")
-                .append(weekdag == DayOfWeek.MONDAY || weekdag == DayOfWeek.THURSDAY ?
-                        "gesloten" : "open")
-                .append("</body></html>")
-                .toString();
-    }
+        String openGesloten =
+                weekdag == DayOfWeek.MONDAY || weekdag == DayOfWeek.THURSDAY ?
+                        "gesloten" : "open";
+        ModelAndView modelAndView =
+                new ModelAndView("index", "openGesloten", openGesloten);
+        modelAndView.addObject(
+                new Adres("Grote markt", "7", new Gemeente("Brussel", 1000)));
+        return modelAndView;    }
 }

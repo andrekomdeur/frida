@@ -1,7 +1,32 @@
 body {
-background-color: #C0BD92;
+background-color: #fad1d1;
 font-family: sans-serif;
 }
 h1 {
-color: red;
+color: #440808;
+}
+nav ul {
+	background-color: #891010;
+	padding: 0.1em 0;
+}
+
+nav li {
+	display: inline;
+}
+
+nav li a {
+	color: #fad1d1;
+	font-weight: bold;
+	padding-left: 0.5em;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+nav li a:hover {
+	color: #f0b87f;
+}
+
+dd.ingredienten {
+	font-size: 0.7em;
+	padding: 0;
 }
