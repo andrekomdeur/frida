@@ -7,7 +7,7 @@
 		<ul>
 			<li th:each="saus:${sauzen}" th:object="${saus}">
 				<dl>
-					<span th:text="|*{naam}   |"></span>
+					<a th:href="@{/sauzen/{nummer}(nummer=*{nummer})}" th:text="*{naam}"></a>
 				</dl>
 				<dd class="ingredienten">
 					<span
