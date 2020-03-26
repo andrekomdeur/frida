@@ -19,7 +19,7 @@
 							th:text="|${ingredient} |"/>
 				</dd>
 			</dl>
-			<img th:src="@{/images/{naam}.png(naam=*{naam})}" th:alt="*{naam}">
+			<img th:src="@{/images/{naam}.png(naam=*{naam})}" th:alt="*{naam}" title="*{naam}"/>
 		</div>
 	</body>
 </html>
