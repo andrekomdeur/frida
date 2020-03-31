@@ -1,10 +1,29 @@
+
 body {
-background-color: #aff8d8;
+<!-- background-color: #aff8d8; -->
 font-family: sans-serif;
 }
+.roze {
+	background-color: LightPink;
+}
+.blauw {
+	background-color: LightBlue;
+}
+.geel {
+	background-color: #FFFFDE;
+}
+
+.naastMekaar {
+padding-left: 0;
+}
+.naastMekaar li {
+display:inline;
+}
+
 h1 {
 color: #4d4fb0;
 }
+
 nav ul {
 	background-color: #891010;
 	padding: 0.1em 0;
